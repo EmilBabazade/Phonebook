@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3001/persons';
+const baseUrl = '/api';
 
 export const getPersons = async () => {
     const response = await axios.get(baseUrl);
@@ -24,5 +24,5 @@ export const updatePerson = async (person) => {
 
 export const deletePerson = async (id) => {
     const res = await axios.delete(`${baseUrl}/${id}`);
-    if(res.status !== 200) throw 'Something went wrong when deleting a person!';
+    if(res.status !== 204) throw 'Something went wrong when deleting a person!';
 };
